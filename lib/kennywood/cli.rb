@@ -3,11 +3,10 @@ class Kennywood::CLI
   def call
     puts "Welcome to Kennywood!"
     Kennywood::Scraper.scrape
-    # Kennywood::Coasters.rollercoasters
     rollercoasters
-
+    done
   end
-#
+
 
   def rollercoasters
       puts ""
@@ -26,29 +25,46 @@ class Kennywood::CLI
         # puts "About:          #{indiv_ride.about.text}"
         puts "Disclaimer:     #{indiv_ride.disclaimer}"
         # puts "Url:            #{indiv_ride.url}"
-      #   puts ""
+        puts ""
         puts "Description:"
         puts "#{indiv_ride.description}"
-      #
-        exit
+
+      #   exit
+      # end
+
+
+        puts ""
+        puts "Do you want to learn more? Enter 'yes' or 'no'."
+        input_two = gets.strip.downcase
+
+          if input_two == "no"
+            done
+          elsif input_two == "yes"
+            puts "About:          #{indiv_ride.about.text}"
+            done
+          else
+            puts ""
+            puts "Sorry I don't understand"
+            rollercoasters
+          end
       end
-  #
-  #     # def self.done
-  #     #   puts ""
-  #     #   puts "Are you finished looking at rollercoasters? Enter 'yes' or 'no'."
-  #     #   input = gets.strip.downcase
-  #     # #
-  #     #     if input == "no"
-  #     #       rollercoasters
-  #     #     elsif input == "yes"
-  #     #       puts ""
-  #     #       puts "Enjoy your stay at Kennywood!!"
-  #     #       exit
-  #     #     else
-  #     #       puts ""
-  #     #       puts "Sorry I don't understand"
-  #     #       rollercoasters
-  #     #     end
-  #     #   end
+
+      def done
+        puts ""
+        puts "Are you finished looking at rollercoasters? Enter 'yes' or 'no'."
+        input = gets.strip.downcase
+
+          if input == "no"
+            rollercoasters
+          elsif input == "yes"
+            puts ""
+            puts "Enjoy your stay at Kennywood!!"
+            exit
+          else
+            puts ""
+            puts "Sorry I don't understand"
+            rollercoasters
+          end
+        end
 
 end

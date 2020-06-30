@@ -19,7 +19,20 @@ def self.scrape
 
 end
 
-
+# def self.scrape
+#   rides = Nokogiri::HTML(open("https://www.kennywood.com/attractions"))
+#
+#   rides.each do |ride|
+#     # binding.pry
+#     indiv_ride = Kennywood::Coasters.new
+#     indiv_ride.name = ride.css("div.pcore2_tile_copy").css("h2").text
+#     indiv_ride.disclaimer = ride.css("div.pcore2_tile_copy").css("i").text
+#     indiv_ride.description = ride.css("div.pcore2_tile_copy").css("p").text
+#     indiv_ride.about = ride.css("div.pcore_tiles_attribicons").each {|all| all['#text']}
+#     indiv_ride.url = ride.css('div.pcore2_tile_copy a').map { |link| link['href'] }
+#     end
+#
+# end
 
 
   # def website
