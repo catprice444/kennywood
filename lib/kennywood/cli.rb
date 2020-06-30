@@ -25,7 +25,7 @@ class Kennywood::CLI
         puts ""
         puts "Disclaimer:          #{indiv_ride.disclaimer}"
         puts ""
-        puts "About:               #{indiv_ride.about[0]}, #{indiv_ride.about[1]}, #{indiv_ride.about[2]}"
+        puts "About:               #{indiv_ride.about[0]} #{indiv_ride.about[1]} #{indiv_ride.about[2]}"
         puts "Page Url:            #{indiv_ride.url}"
         puts ""
         puts "Description:"
