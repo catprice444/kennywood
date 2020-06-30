@@ -8,7 +8,7 @@ def self.scrape
   website = Nokogiri::HTML(open("https://www.kennywood.com/attractions"))
   rides = website.css("div.pcore2_tile_copy")
   rides.each do |ride|
-    indiv_ride = CpCoasters::Coasters.new
+    indiv_ride = Kennywood::Coasters.new
     indiv_ride.name = rides.css("h2").text
     indiv_ride.disclaimer = rides.css("i").text
     indiv_ride.description = rides.css("p").text
