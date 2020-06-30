@@ -20,58 +20,38 @@ class Kennywood::CLI
       input = gets.strip
       indiv_ride = rides[input.to_i-1]
         puts ""
-        puts "Name:           #{indiv_ride.name}"
+        puts "Name:                #{indiv_ride.name}"
         puts ""
-        # puts "About:     #{indiv_ride.about}"
-        puts "Minimum Height:      #{indiv_ride.about[0]}"
-        puts "Thrill Level:        #{indiv_ride.about[1]}"
+        puts "Disclaimer:          #{indiv_ride.disclaimer}"
+        puts ""
+        puts "About:               #{indiv_ride.about[0]}, #{indiv_ride.about[1]}, #{indiv_ride.about[2]}"
+        puts "Page Url:            #{indiv_ride.url}"
         puts ""
         puts "Description:"
         puts "#{indiv_ride.description}"
-
+        puts ""
 
         done
 
       end
 
 
-      #   puts ""
-      #   puts "Do you want to learn more? Enter 'yes' or 'no'."
-      #   input_two = gets.strip.downcase
-      #
-      #     if input_two == "no"
-      #       done
-      #     elsif input_two == "yes"
-      #       more(input)
-      #     else
-      #       puts ""
-      #       puts "Sorry I don't understand"
-      #       rollercoasters
-      #     end
-      # end
+    def done
+      puts ""
+      puts "Are you finished looking at rollercoasters? Enter 'yes' or 'no'."
+      input = gets.strip.downcase
 
-      # def more(input)
-      #
-      #   information = Kennywood::Coasters.id(input)
-      #   puts "About:        #{information.about}."
-      #
-      # end
-
-      def done
-        puts ""
-        puts "Are you finished looking at rollercoasters? Enter 'yes' or 'no'."
-        input = gets.strip.downcase
-
-          if input == "no"
-            rollercoasters
-          elsif input == "yes"
-            puts ""
-            puts "Enjoy your stay at Kennywood!!"
-            exit
-          else
-            puts ""
-            puts "Sorry I don't understand"
-            rollercoasters
-          end
+        if input == "no"
+          rollercoasters
+        elsif input == "yes"
+          puts ""
+          puts "Enjoy your stay at Kennywood!!"
+          exit
+        else
+          puts ""
+          puts "Sorry I don't understand"
+          rollercoasters
         end
+
+    end
 end
