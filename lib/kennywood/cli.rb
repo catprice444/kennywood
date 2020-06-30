@@ -23,12 +23,12 @@ class Kennywood::CLI
       indiv_ride = rides[input.to_i-1]
         puts ""
         puts "Name:           #{indiv_ride.name}"
-      #   # puts "About:          #{indiv_ride.about}"
-        # puts "Disclaimer:     #{indiv_ride.disclaimer}"
-      #   # puts "Url:            #{indiv_ride.url}"
+        # puts "About:          #{indiv_ride.about.text}"
+        puts "Disclaimer:     #{indiv_ride.disclaimer}"
+        # puts "Url:            #{indiv_ride.url}"
       #   puts ""
-        # puts "Description:"
-        # puts "#{indiv_ride.description}"
+        puts "Description:"
+        puts "#{indiv_ride.description}"
       #
         exit
       end

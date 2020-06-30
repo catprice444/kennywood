@@ -1,5 +1,5 @@
 class Kennywood::Scraper
-  attr_accessor :name, :min_height, :thrill_level, :other, :disclaimer, :description, :about, :website
+  attr_accessor :name, :min_height, :thrill_level, :other, :disclaimer, :description, :about, :website, :url
 
   #first page = name
   #second_page = name, min_height, thrill_level, other, disclaimer, description
@@ -8,10 +8,13 @@ def self.scrape
   website = Nokogiri::HTML(open("https://www.kennywood.com/attractions"))
   rides = website.css("div.pcore2_tile_copy")
   rides.each do |ride|
+    # binding.pry
     indiv_ride = Kennywood::Coasters.new
-    indiv_ride.name = rides.css("h2").text
-    indiv_ride.disclaimer = rides.css("i").text
-    indiv_ride.description = rides.css("p").text
+    indiv_ride.name = ride.css("h2").text
+    indiv_ride.disclaimer = ride.css("i").text
+    indiv_ride.description = ride.css("p").text
+    # indiv_ride.about = website.css("div.pcore_tiles_attribicons").each {|all| all['#text']}
+    # indiv_ride.url = website.css('div.pcore2_tile_copy a').map { |link| link['href'] }
     end
 
 end
@@ -48,7 +51,7 @@ end
   #   @url = website.css('div.pcore2_tile_copy a').map { |link| link['href'] }
   # end
 
-# binding.pry
+
 
 
 end
