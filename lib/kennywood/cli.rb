@@ -9,13 +9,14 @@ class Kennywood::CLI
 
   def rollercoasters
       puts ""
-      puts "Which Rollercoaster would you like to learn more about? Enter a number between 1-48."
-
         rides = Kennywood::Coasters.all
 
         rides.each.with_index(1) do |ride, i|
           puts "#{i}. #{ride.name}"
         end
+        puts ""
+        puts "Which Rollercoaster would you like to learn more about?"
+        puts "Enter the corresponding number between 1-48."
 
       input = gets.strip
       indiv_ride = rides[input.to_i-1]
