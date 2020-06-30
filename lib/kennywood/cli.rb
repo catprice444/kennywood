@@ -3,7 +3,6 @@ class Kennywood::CLI
   def call
     puts "Welcome to Kennywood!"
     Kennywood::Scraper.scrape
-    # Kennywood::Scraper.sections
     rollercoasters
   end
 
@@ -23,10 +22,11 @@ class Kennywood::CLI
         puts ""
         puts "Name:           #{indiv_ride.name}"
         puts ""
-        puts "Disclaimer:     #{indiv_ride.disclaimer}"
+        puts "About:     #{indiv_ride.about}"
         puts ""
         puts "Description:"
         puts "#{indiv_ride.description}"
+
 
         done
 
