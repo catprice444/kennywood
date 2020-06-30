@@ -1,6 +1,10 @@
-require "kennywood/version"
+require 'nokogiri'
+require 'open-uri'
 
-module Kennywood
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require 'pry'
+
+
+require_relative "./kennywood/version"
+require_relative "./kennywood/cli"
+require_relative "./kennywood/coasters"
+require_relative "./kennywood/scraper"

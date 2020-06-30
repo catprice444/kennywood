@@ -1,0 +1,2 @@
+class Kennywood::Scraper
+end 

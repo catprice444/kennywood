@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "kennywood"
+
+Kennywood::CLI.new.call
