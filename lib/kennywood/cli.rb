@@ -3,8 +3,8 @@ class Kennywood::CLI
   def call
     puts "Welcome to Kennywood!"
     Kennywood::Scraper.scrape
+    # Kennywood::Scraper.sections
     rollercoasters
-    done
   end
 
 
@@ -22,32 +22,38 @@ class Kennywood::CLI
       indiv_ride = rides[input.to_i-1]
         puts ""
         puts "Name:           #{indiv_ride.name}"
-        # puts "About:          #{indiv_ride.about.text}"
+        puts ""
         puts "Disclaimer:     #{indiv_ride.disclaimer}"
-        # puts "Url:            #{indiv_ride.url}"
         puts ""
         puts "Description:"
         puts "#{indiv_ride.description}"
 
-      #   exit
+        done
+
+      end
+
+
+      #   puts ""
+      #   puts "Do you want to learn more? Enter 'yes' or 'no'."
+      #   input_two = gets.strip.downcase
+      #
+      #     if input_two == "no"
+      #       done
+      #     elsif input_two == "yes"
+      #       more(input)
+      #     else
+      #       puts ""
+      #       puts "Sorry I don't understand"
+      #       rollercoasters
+      #     end
       # end
 
-
-        puts ""
-        puts "Do you want to learn more? Enter 'yes' or 'no'."
-        input_two = gets.strip.downcase
-
-          if input_two == "no"
-            done
-          elsif input_two == "yes"
-            puts "About:          #{indiv_ride.about.text}"
-            done
-          else
-            puts ""
-            puts "Sorry I don't understand"
-            rollercoasters
-          end
-      end
+      # def more(input)
+      #
+      #   information = Kennywood::Coasters.id(input)
+      #   puts "About:        #{information.about}."
+      #
+      # end
 
       def done
         puts ""
@@ -66,5 +72,4 @@ class Kennywood::CLI
             rollercoasters
           end
         end
-
 end
