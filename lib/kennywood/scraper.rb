@@ -15,19 +15,24 @@ class Kennywood::Scraper
       indiv_ride.name = ride.css("h2").text
       indiv_ride.disclaimer = ride.css("i").text
       indiv_ride.description = ride.css("p").text
-    # indiv_ride.about = website.css("div.pcore_tiles_attribicons").each {|all| all['#text']}
-    indiv_ride.url = ride.css('a').map { |link| link['href'] }
-    indiv_ride.about = ride.css('div.pcore_tiles_attribicons').text
+      indiv_ride.url = ride.css("a").map { |link| link['href'] }
+      # indiv_ride.about = ride.css("div.pcore_tiles_attribicons").text
+      indiv_ride.about = ride.css("div.pcore_tiles_attribicons").children.map {|height| height.text}
+      # if ride.css("div.pcore_tiles_attribicons").css('div').text.include?("Minimum Height")
+      #   indiv_ride.min_height = ride.css("div.pcore_tiles_attribicons").css('div').text
+      # elsif ride.css("div.pcore_tiles_attribicons").css('div').text.include?("Thrill Level")
+      #     indiv_ride.thrill_level = ride.css("div.pcore_tiles_attribicons").css('div').text
+      #   end
       end
 
     end
 
     # info = {}
     # about.css("div.pcore_tiles_attribicons").each do |info|
-    #   if about.css("span.title_attribute").text.include?("Minimum Height")
-    #     all[:min_height] = about.css("span.title_value").text
-    #     elsif info.css("span.title_attribute").text.include?("Thrill Level")
-    #       all[:thrill_level] = info.css("span.title_value").text
+    #   if about.css('span').text.include?("Minimum Height")
+    #     all[:min_height] = about.css("div.background-image").text
+    #     elsif info.css('span').text.include?("Thrill Level")
+    #       all[:thrill_level] = info.css("div.background-image").text
     #     end
     #     info
     #   end
