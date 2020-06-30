@@ -1,10 +1,11 @@
 class Kennywood::CLI
-  
+
   def call
     puts "Welcome to Kennywood!"
     Kennywood::Scraper.scrape
+    # Kennywood::Coasters.rollercoasters
     rollercoasters
-    # CpCoasters::Coasters.done
+
   end
 #
 
@@ -13,24 +14,21 @@ class Kennywood::CLI
       puts "Which Rollercoaster would you like to learn more about? Enter a number between 1-48."
 
         rides = Kennywood::Coasters.all
-        # #
-        # if rides.key?("name")
-        #   puts "#{value}"
-        # end
-        # rides.each.with_index(1) do |ride, i|
-        #   puts "#{i}. #{ride.name}"
-        # end
+
+        rides.each.with_index(1) do |ride, i|
+          puts "#{i}. #{ride.name}"
+        end
 
       input = gets.strip
       indiv_ride = rides[input.to_i-1]
         puts ""
         puts "Name:           #{indiv_ride.name}"
       #   # puts "About:          #{indiv_ride.about}"
-      #   # puts "Disclaimer:     #{indiv_ride.disclaimer}"
+        # puts "Disclaimer:     #{indiv_ride.disclaimer}"
       #   # puts "Url:            #{indiv_ride.url}"
       #   puts ""
-      #   puts "Description:"
-      #   puts "#{indiv_ride.description}"
+        # puts "Description:"
+        # puts "#{indiv_ride.description}"
       #
         exit
       end
@@ -44,7 +42,7 @@ class Kennywood::CLI
   #     #       rollercoasters
   #     #     elsif input == "yes"
   #     #       puts ""
-  #     #       puts "Enjoy your stay at Cedar Park!!"
+  #     #       puts "Enjoy your stay at Kennywood!!"
   #     #       exit
   #     #     else
   #     #       puts ""

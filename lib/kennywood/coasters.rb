@@ -10,4 +10,5 @@ class Kennywood::Coasters
     @@all
   end
 
+
 end
