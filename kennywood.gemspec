@@ -1,16 +1,16 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "cp_coasters/version"
+require "kennywood/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "cp_coasters"
-  spec.version       = CpCoasters::VERSION
+  spec.name          = "kennywood"
+  spec.version       = Kennywood::VERSION
   spec.authors       = ["catprice444"]
   spec.email         = ["catprice444@gmail.com"]
 
-  spec.summary       = "Rollercoasters at Cedar Point"
-  spec.description   = "Provides details on the different rollercoasters at Cedar Point"
+  spec.summary       = "Rollercoasters at Kennywood"
+  spec.description   = "Provides details on the different rollercoasters at Kennywood"
   # spec.homepage      = "Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
