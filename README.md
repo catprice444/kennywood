@@ -1,3 +1,9 @@
+# About
+
+This project is intended to scrape the information off of Kennywood's website (a small amusement park in Pittsburgh, PA) and allow a user to see all of the rides they have available. Once a user choices which ride they would like to learn more about, the system will then scrape for that particular ride and output the related information.
+
+Starts by welcoming the user and prompting them to pick a ride based off of a list of names. Once they input the number associated with the name, the system will spit out more information about that ride, including description, disclaimers, thrill levels, minimum height to ride, etc. The user will then be asked if they would like to see another ride, or finish. If they chose to see another ride, the system will start over. If they are finished, the system will close out. 
+
 # Kennywood
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/kennywood`. To experiment with that code, run `bin/console` for an interactive prompt.
