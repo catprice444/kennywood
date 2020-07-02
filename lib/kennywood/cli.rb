@@ -16,7 +16,7 @@ class Kennywood::CLI
         end
         puts ""
         puts "Which Rollercoaster would you like to learn more about?"
-        puts "Enter the corresponding number between 1-48."
+        puts "Enter the corresponding number between 1-#{rides.size}."
 
       input = gets.strip
       indiv_ride = rides[input.to_i-1]
